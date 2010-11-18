@@ -57,7 +57,7 @@ class ADEAgent(Agent.Movies):
 
     # Summary.
     try:
-      metadata.summary = html.xpath('//div[@class="Item_InfoContainer"]')[0].text_content().replace('\t','')
+      metadata.summary = html.xpath('//div[@class="Item_InfoContainer"]')[0].text_content().replace('\t','').strip()
       if metadata.summary.find(metadata.tagline) != -1:
         metadata.summary = metadata.summary.replace(metadata.tagline, '').strip()
     except: pass
